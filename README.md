@@ -4,10 +4,10 @@
 Written in pure HTML, CSS and Javascript
 
 Desktop:
-[url=https://ibb.co/G9KTLLD][img]https://i.ibb.co/r3CsSSh/desktop.png[/img][/url]
+![alt text](https://i.ibb.co/r3CsSSh/desktop.png)
 
 Startup:
-[url=https://ibb.co/YtLmwhn][img]https://i.ibb.co/tbJgFDj/startup.png[/img][/url]
+![alt text](https://i.ibb.co/tbJgFDj/startup.png)
 
 ## Pages
 
