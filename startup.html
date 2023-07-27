@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="refresh" content="10; url = desktop.html" />
+  <title>Windows 2000 Professional is loading...</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: #446BA0;
+    }
+
+    #video-background {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 50%;
+      height: auto;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    #loading-text {
+      font-size: 24px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Loading Page -->
+  <div id="loading-page">
+    <video id="video-background" src="startup.mp4" autoplay loop muted></video>
+  </div>
+</body>
+
+</html>

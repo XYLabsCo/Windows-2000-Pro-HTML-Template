@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Windows 2000 Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <!-- Taskbar -->
+    <div id="taskbar">
+        <div id="start-menu-button">
+            <img src="img/start.png" alt="Start Button" id="start-button-img">
+        </div>
+        <div class="dividertask"></div>
+        <div id="system-tray">
+            <div id="current-date"></div>
+        </div>
+    </div>
+
+    <!-- Start Menu -->
+    <div id="start-menu">
+        <div class="start-menu-left">
+            <p>Windows 2000 Professional</p>
+        </div>
+        <div id="start-menu-list">
+            <p id="start-menu-username">Guest</p>
+            <ul>
+                <li><img src="img/login.ico" class="start-menu-icon">Switch User</li>
+                <li class="has-submenu">
+                    <img src="img/programs2.ico" class="start-menu-icon">Programs
+                    <ul class="submenu">
+                        <li><img src="img/bridge.ico" class="start-menu-icon">Bridge</li>
+                        <li><img src="img/faucet.ico" class="start-menu-icon">Faucet</li>
+                        <!-- ... -->
+                    </ul>
+                </li>
+                <li><img src="img/documents2.ico" class="start-menu-icon">Documents</li>
+                <li><img src="img/settings.ico" class="start-menu-icon">Developer</li>
+                <li><img src="img/find.ico" class="start-menu-icon">Explorer</li>
+                <li><img src="img/help.ico" class="start-menu-icon">Help</li>
+                <li class="divider"></li>
+                <li><img src="img/logout.ico" class="start-menu-icon">Log Out</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Desktop Icons -->
+    <div id="desktop">
+        <div class="icon" id="my-computer">
+            <img src="img/my-computer.ico">
+            <span>My Computer</span>
+        </div>
+    </div>
+
+    <!-- Window - My Computer -->
+    <div id="window" class="window">
+        <div id="window-titlebar">
+            <span id="window-title"><img src="img/my-computer.ico" class="windowtaskbaricon">My Wallet</span>
+            <div id="window-controls">
+                <button id="window-minimize" class="iconstoolbarmin"></button>
+                <button id="window-maximize" class="iconstoolbarmax"></button>
+                <button id="window-close" class="iconstoolbarclose"></button>
+            </div>
+        </div>
+        <div id="window-content">
+            <div>
+                <h2>This is a window</h2>
+                <p>Add your content here</p>
+                <p>Balance: </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

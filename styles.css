@@ -1,0 +1,384 @@
+@font-face {
+    font-family: 'Jogan';
+    src: url('jogan.otf') format('opentype');
+}
+
+body {
+    background: #446BA0;
+    margin: 0;
+    padding: 0;
+    font-family: 'Jogan', 'Tahoma', sans-serif;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+#taskbar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background: #c0c0c0;
+    display: flex;
+    align-items: center;
+    border-top: 2px outset #fff;
+}
+
+#system-tray {
+    margin-left: auto;
+    margin-right: 10px;
+    border: 2px inset #fff;
+    font-size: 14px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    padding-left: 8px;
+    padding-right: 8px;
+    order: 2;
+}
+
+
+#taskbar-window {
+    background: #c0c0c0;
+    border: 2px outset #fff;
+    color: #000;
+    padding: 4px 8px;
+    margin-left: 5px;
+    margin-right: 4px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#taskbar-window:hover {
+    background-color: #232675;
+    color: #fff;
+}
+
+#start-menu-button {
+    margin-left: 2px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 2px;
+}
+
+#start-button-img {
+    height: 24px;
+}
+
+.has-submenu::after {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    border: solid #000;
+    border-width: 0 1px 1px 0;
+    padding: 3px;
+    transform: rotate(318deg);
+    margin-left: 100px;
+    float: right;
+    /* Float the caret to the right */
+    transform-origin: center center;
+    /* Set the transform origin to the center */
+}
+
+.has-submenu.collapsed::after {
+    transform: rotate(-45deg);
+    /* Rotate the caret to face right */
+}
+
+.divider {
+    margin-top: 8px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #808080;
+}
+
+.taskbar-item {
+    margin-left: 5px;
+    color: #000;
+    background: #c0c0c0;
+    padding: 3px;
+    border: 1px outset #fff;
+    cursor: pointer;
+}
+
+#window {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    min-height: 450px;
+    background-color: #c0c0c0;
+    border: 2px outset #fff;
+    padding: 2px;
+}
+
+#window-titlebar {
+    background: rgb(35, 38, 117);
+    background: linear-gradient(90deg, rgba(35, 38, 117, 1) 0%, rgba(176, 191, 231, 1) 100%);
+    color: #ffffff;
+    padding: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-shadow: 1px 1px black;
+}
+
+#window-controls {
+    display: flex;
+    align-items: center;
+}
+
+#window-controls button {
+    margin-left: 4px;
+    background-color: #c0c0c0;
+    color: #000;
+    cursor: pointer;
+    border: 2px outset #fff;
+    height: 20px;
+    width: 20px;
+    align-items: center;
+}
+
+#window-controls button:first-child {
+    margin-left: 0;
+}
+
+
+#window-content {
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 100%;
+}
+
+.start-menu-left {
+    background: linear-gradient(to bottom, #0a246a, #a6caf0);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 100%;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+#start-menu {
+    position: fixed;
+    bottom: 30px;
+    left: 0;
+    width: 250px;
+    height: 350px;
+    background: #c0c0c0;
+    border: 2px outset #fff;
+    display: none;
+    display: flex;
+    align-items: stretch;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+#start-menu-username {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#start-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+}
+
+#start-menu li {
+    padding: 3px;
+    color: #000;
+    cursor: pointer;
+    position: relative;
+    font-size: 14px;
+    /* make font size larger */
+    line-height: 32px;
+    /* increase line height */
+    display: flex;
+    /* add flexbox */
+    align-items: center;
+    /* center items vertically */
+    width: 100%;
+}
+
+.start-menu-icon {
+    height: 32px;
+    width: 32px;
+    margin-right: 5px;
+}
+
+
+#start-menu li:hover {
+    background: #232675;
+    /* hover background color */
+    color: #ffffff;
+    /* text color on hover */
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 200px;
+    background: #c0c0c0;
+    border: 2px outset #fff;
+}
+
+.icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+.icon img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+}
+
+.icon span {
+    display: block;
+    margin: 0;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 75px;
+}
+
+.icon2 {
+    position: absolute;
+    top: 30%;
+    left: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+.icon2 img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+}
+
+.icon2 span {
+    display: block;
+    margin: 0;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 75px;
+}
+
+.icon3 {
+    position: absolute;
+    top: 15%;
+    left: 10px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+.icon3 img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 8px;
+}
+
+.icon3 span {
+    display: block;
+    margin: 0;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 75px;
+}
+
+.iconstoolbarmin {
+    background-image: url("img/minimize.svg");
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+}
+
+.iconstoolbarmax {
+    background-image: url("img/maximize.svg");
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+}
+
+.iconstoolbarclose {
+    background-image: url("img/close.svg");
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+}
+
+.taskbar-icon {
+    height: 12px;
+    margin-right: 3px;
+}
+
+.windowtaskbaricon {
+    height: 14px;
+    margin-right: 6px;
+}
+
+.taskbarmin {
+    order: 1;
+}
+
+.dividertask {
+    width: 1px;
+    height: 80%;
+    background-color: #959595;
+    margin: 0 5px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #D7D7D7;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #C0C0C0;
+    border: 2px outset #fff;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #C0C0C0;
+}
