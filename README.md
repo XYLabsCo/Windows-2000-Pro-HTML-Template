@@ -4,9 +4,11 @@
 Written in pure HTML, CSS and Javascript
 
 Desktop:
+
 ![alt text](https://i.ibb.co/r3CsSSh/desktop.png)
 
 Startup:
+
 ![alt text](https://i.ibb.co/tbJgFDj/startup.png)
 
 ## Pages
